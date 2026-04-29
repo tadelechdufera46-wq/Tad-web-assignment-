@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Portfolio</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+scroll-behavior:smooth;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:transparent;
+display:flex;
+justify-content:right;
+padding:15px;
+z-index:1000;
+transition:0.5s;
+}
+
+nav.scrolled{
+background:#e91e3c;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+}
+nav a:hover{
+           color: purple;
+}
+section{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+color:white;
+text-align:center;
+}
+
+#home{
+background-color:pink;
+color: black;
+}
+
+#about{
+background:#8fa1bf;
+color:black;
+justify-content:space-around;
+padding:40px;
+font-size: 20px;
+}
+h1 { text-align:center;
+    color: black;
+}
+img{
+   width:200px;
+   height:300px;
+   border-radius: 10px;
+}
+
+.im{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:40px;
+  padding:40px;
+}
+.tex { max-width:400px; }
+.tex a{ 
+      color:magenta;
+      text-decoration: none;
+}
+#service{
+background: #f7e0c7;
+color:black;
+font-size: 20px;
+margin: auto; 
+padding: 20px;
+}
+h2 { text-align: center; 
+    color: #222; 
+
+}
+
+.ser div{ 
+          margin-top:10px;
+          display: flex; 
+          margin-bottom: 15px; 
+          font-size: 20px;
+          color: #333;
+          font-weight:bold;
+        }
+.ser p{
+     margin: 5px;
+}        
+ 
+#skill{
+background:#cc6b1d;
+}
+
+#contact{
+background:#2f3542;
+}
+.contact-form{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px;
+}
+
+.form{
+    width: 50%;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.contact-form textarea{
+    height: 120px;
+}
+
+.contact-info{
+    width: 50%;
+    color: white;
+}
+
+
+ .send-btn {
+            background-color: #d61c3c;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+}
+.progress{
+width:200px;
+background:#fff;
+margin:5px;
+}
+
+.bar{
+height:10px;
+background:red;
+}
+
+button{
+background: #d61c3c;
+color:white;
+border:none;
+padding:10px;
+cursor:pointer;
+}
+
+#topBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:red;
+padding:10px;
+color:white;
+cursor:pointer;
+}
+.skill{
+    margin:10px 0;
+    width: 40%;
+    color: black;
+    
+}
+
+.bar{
+    width:100%;
+    background:#ddd;
+}
+
+.bar div{
+    height:10px;
+    background:red;
+}
+footer{
+background:black;
+color:white;
+text-align:center;
+padding:10px;
+}
+
+.light{
+    color: red;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav id="navbar">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#service">Service</a>
+<a href="#skill">Skill</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+<h1>Hello, I am Tadelech Dufera</h1>
+<h2 id="typing"></h2>
+<button onclick="goContact()">➤contact</button>
+</section>
+
+<section id="about">
+  <h1>About me</h1>
+<div class="im">
+<img src="Fen.jpg" class="img">
+<div class="tex">
+<p>I'm web student.First it look hared and complex but it good now.In the futur I want learn more and work in it.
+<a href="#">click here</a>I wish to learn programing
+</p>
+</div>
+</div>
+</section>
+
+ <section id="service">
+  <h2>My Services</h2>
+    <div class="ser">
+      <div>🖥️Web Design</div>
+       <p>I try to design website and the website has two or more pages.like Portfolio</p>
+      <div>🎬vedio editing</div>
+       <p>I edit vedio using phone application.I edit  vedio by using both photo and vedio</p>
+      <div>🖼️photo editing</div>
+      <p>I edit photo using mobile application.And only by changing photo background</p>
+    </div>
+        
+    </section>  
+
+<section id="skill">
+<p>I am still learning but -----</p>
+<button onclick="showMore()" class="Read">Read More</button>
+<div id="more" style="display:none;">
+<p>now have little skill that is webstite design.</p>
+<p>I the future my skill is improve then start design large and complex websties so in this level have to learn more.</p>
+</div>
+<div class="skill">
+        HTML 90%
+        <div class="bar"><div style="width:90%"></div></div>
+    </div>
+
+    <div class="skill">
+        CSS 70%
+        <div class="bar"><div style="width:70%"></div></div>
+    </div>
+
+    <div class="skill">
+        JavaScript 25%
+        <div class="bar"><div style="width:25%"></div></div>
+      </div>  
+</section>
+ <section id="contact">
+         <div class="contact-form">
+    <div class="form">
+        <input type="text" placeholder="your name">
+        <input type="email" placeholder="your email address">
+        <input type="text" placeholder="your subject">
+        <textarea placeholder="message"></textarea>
+            <button class="send-btn" onclick="goHome()">send message💬</button>
+        </div>
+   <div class="contact-info">
+        <p>Please contact and support me, just send your subjects and let me hear you!</p>
+        <p>🏠address</p>
+        <p>📞 +251-943-78-31-59</p>
+        <p>✉ contact@tadelechdufera@46gmail.com</p>
+    </div>
+</div>
+</section>
+
+<div id="topBtn" onclick="goHome()">↑</div>
+
+<footer>
+    <p>©Copyright <span class="light">Tadelech Dufera website</span>All rights reserved</p>
+</footer>
+
+<script>
+window.onscroll=function(){
+let nav=document.getElementById("navbar");
+if(window.scrollY>50){
+nav.classList.add("scrolled");
+}else{
+nav.classList.remove("scrolled");
+}
+}
+
+let text="I am Grade 11 Web student";
+let i=0;
+function typing(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,100);
+}else{
+setTimeout(()=>{
+document.getElementById("typing").innerHTML="";
+i=0;
+typing();
+},1000);
+}
+}
+typing();
+
+function showMore(){
+let x=document.getElementById("more");
+if(x.style.display==="none"){
+x.style.display="block";
+}else{
+x.style.display="none";
+}
+}
+
+function goHome(){
+window.location="#home";
+}
+
+function goContact(){
+window.location="#contact";
+}
+</script>
+
+</body>
+</html>
